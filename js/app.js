@@ -1,5 +1,4 @@
 let amigos = [];
-document.getElementById('adicionar').setAttribute('disabled', true);
 
 function adicionar(){
     //Receber os nomes
@@ -8,9 +7,10 @@ function adicionar(){
     let incluidos = document.getElementById('lista-amigos');
     console.log(nomes);
 
+    let verificarAmigos = amigos.map(p => p.toUpperCase());
+    console.log(verificarAmigos);
 
-
-    if(amigos.includes(nomes)){
+    if(verificarAmigos.includes(nomes.toUpperCase())){
         alert("Ops! Parece que foram adicionados nomes iguais. Você pode optar por sobrenomes ou um apelido carinhoso para a diferenciação. ;)")
     }else if(nomes.trim() == ""){
         alert("Ops! Nenhum nome foi identificado para ser adicionado. Tente novamente.")
